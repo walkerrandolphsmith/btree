@@ -1,0 +1,64 @@
+{
+  "name": "@walkerrandolphsmith/b-tree",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "np": {
+    "branch": "master",
+    "yarn": false
+  },
+  "author": "walkerrandolphsmith@gmail.com",
+  "module": "dist/b-tree.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/b-tree.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/b-tree.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "release": "np"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.10.0",
+    "husky": "^5.1.3",
+    "np": "^7.4.0",
+    "size-limit": "^4.10.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.1.0",
+    "typescript": "^4.2.2"
+  }
+}
